@@ -17,6 +17,7 @@ export async function getStaticProps(context: NextPageContext) {
   return {
     props: {
       ...translation,
+      revalidate: 60,
     },
   };
 }
