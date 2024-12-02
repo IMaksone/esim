@@ -1,15 +1,21 @@
 import { NextPageContext } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 
-export default function Home() {
-  const { t } = useTranslation("common");
+import Home from "src/components/modules/Home";
+import { getApiCountries } from "src/services/api/countries";
 
-  return <>{t("title")}</>;
-}
+export default Home;
 
 export async function getStaticProps(context: NextPageContext) {
   const { locale } = context;
+
+  const countries = await getApiCountries(locale);
+
+  const initialState = {
+    countries: {
+      countryList: countries,
+    },
+  };
 
   const translation =
     locale && (await serverSideTranslations(locale, ["common"]));
@@ -17,7 +23,7 @@ export async function getStaticProps(context: NextPageContext) {
   return {
     props: {
       ...translation,
-      revalidate: 60,
+      initialState,
     },
   };
 }
