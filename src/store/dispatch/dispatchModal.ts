@@ -1,12 +1,10 @@
-import { ApiCharacter } from "src/types/character";
 import modalSlice from "../slices/modalsSlice";
 import createUseStoreDispatch from "./common/createUseStoreDispatch";
 
-const { setCharacterForModal, hideModal } = modalSlice.actions;
+const { openAuthModal, hideAuthModal } = modalSlice.actions;
 
-const useDispatchCharacterForModal =
-  createUseStoreDispatch<ApiCharacter>(setCharacterForModal);
+const useDispatchOpenAuthModal = createUseStoreDispatch(openAuthModal);
 
-const useDispatchHideModal = createUseStoreDispatch(hideModal);
+const useDispatchHideAuthModal = createUseStoreDispatch(hideAuthModal);
 
-export { useDispatchCharacterForModal, useDispatchHideModal };
+export { useDispatchOpenAuthModal, useDispatchHideAuthModal };

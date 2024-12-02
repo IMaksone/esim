@@ -1,13 +1,12 @@
 import { FieldData, FieldKeys, FieldsState } from "src/store/types";
 import { SliceSeter } from "../types";
 
-type SetFieldByKey = SliceSeter<
-  FieldsState,
-  {
-    key: FieldKeys;
-    data: FieldData;
-  }
->;
+type SetFieldByKeyPayload = {
+  key: FieldKeys;
+  data: FieldData;
+};
+
+type SetFieldByKey = SliceSeter<FieldsState, SetFieldByKeyPayload>;
 
 const setFieldByKey: SetFieldByKey = (state, { payload }) => {
   const { key, data } = payload;

@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { ActionCreatorWithOptionalPayload } from "@reduxjs/toolkit";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 import { StoreDispatch } from "src/store/makeStore";
 
-type Seter<Payload> = ActionCreatorWithOptionalPayload<Payload>;
+type Seter<Payload> = ActionCreatorWithPayload<Payload>;
 
 const useStoreDispatch = () => useDispatch<StoreDispatch>();
 
