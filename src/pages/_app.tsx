@@ -1,18 +1,17 @@
 import type { AppProps } from "next/app";
-import { appWithTranslation, UserConfig } from "next-i18next";
-import { i18n } from "../../next-i18next.config.js";
+import { appWithTranslation } from "next-i18next";
 
-import "src/styles/globals.css";
+import { fontInter } from "src/initial/fonts";
+import { emptyInitialI18NextConfig } from "src/initial/i18next";
 
-const emptyInitialI18NextConfig: UserConfig = {
-  i18n: {
-    defaultLocale: i18n.defaultLocale,
-    locales: i18n.locales,
-  },
-};
+import "src/styles/globals.scss";
 
 function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <main className={fontInter.className}>
+      <Component {...pageProps} />
+    </main>
+  );
 }
 
 export default appWithTranslation(App, emptyInitialI18NextConfig);
