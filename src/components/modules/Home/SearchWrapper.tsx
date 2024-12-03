@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import Dropdown from "src/components/ui/Dropdown";
 import SearchFieldController from "src/components/forms/fieldControllers/SearchFieldController";
@@ -7,9 +7,9 @@ import useCommonTranslation from "src/hooks/useCommonTranslation";
 import { useCountryListSelector } from "src/store/selector/countriesSelector";
 import VirtualList from "src/components/ui/VirtualList";
 import { useFieldValueByNameSelector } from "src/store/selector/fieldsSelector";
+import CountryElement from "src/components/ui/CountryElement";
 
 import classes from "./search-wrapper.module.scss";
-import { Country } from "src/types/country";
 
 export default function SearchWrapper() {
   const [open, setOpen] = useState(false);
@@ -35,10 +35,15 @@ const Title = () => {
 
 const Content = () => {
   const commonTranslation = useCommonTranslation();
-  const searchValue = useFieldValueByNameSelector(FIELD_NAMES.SEARCH);
 
-  const rendered = searchValue ? (
-    <VirtualWrapper />
+  const list = useList();
+
+  const rendered = list.length ? (
+    <VirtualList
+      className={classes.virtual_list}
+      list={list}
+      element={CountryElement}
+    />
   ) : (
     <p className={classes.not_found}>{commonTranslation("notFound")}</p>
   );
@@ -46,30 +51,17 @@ const Content = () => {
   return <div className={classes.content}>{rendered}</div>;
 };
 
-const VirtualWrapper = () => {
+const useList = () => {
   const countryList = useCountryListSelector();
-  const searchValue = useFieldValueByNameSelector(FIELD_NAMES.SEARCH) || "";
+  const searchValue = useFieldValueByNameSelector(FIELD_NAMES.SEARCH);
 
-  const list = countryList.filter(
-    (country) =>
-      country.country.indexOf(searchValue) >= 0 ||
-      country.iso.indexOf(searchValue) >= 0
-  );
+  const list = searchValue
+    ? countryList.filter(
+        (country) =>
+          country.country.indexOf(searchValue) >= 0 ||
+          country.iso.indexOf(searchValue) >= 0
+      )
+    : [];
 
-  return (
-    <VirtualList
-      className={classes.virtual_list}
-      list={list}
-      element={Element}
-    />
-  );
-};
-
-type ElementProps = {
-  data: Country;
-};
-
-const Element = ({ data }: ElementProps) => {
-  console.log(data);
-  return <p>{data.country}</p>;
+  return useMemo(() => list, [searchValue, countryList]);
 };

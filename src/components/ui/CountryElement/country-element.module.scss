@@ -1,0 +1,14 @@
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px;
+
+  &:hover p {
+    color: colors.$black;
+  }
+}

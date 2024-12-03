@@ -12,6 +12,7 @@
   "enterYourEmail": "Введи email",
   "continue": "Продолжить",
   "notFound": "Ничего не найдено :(",
+  "from": "от",
   "successfullyLoggedEmail": "Вы успешно вошли через почту",
   "fieldErrors": {
     "incorrectEmail": "Некорректный email"
