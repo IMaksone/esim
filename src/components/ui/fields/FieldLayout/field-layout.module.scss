@@ -1,22 +1,23 @@
-
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
 
 .input_container,
 .input_container_error {
   position: relative;
   display: flex;
-  min-height: 64px;
   width: 100%;
-  padding: 27px 16px 12px;
+  padding: 12px 16px;
   margin-bottom: 4px;
-  //border: 1px solid $gray-20;
-  //border-radius: $radius-m;
+  border: 1px solid colors.$field-backgraund;
+  border-radius: numbers.$radius-field;
   cursor: text;
+  background-color: colors.$field-backgraund;
 
   input {
-    @include fontMedium;
     font-weight: 500;
     width: 100%;
     margin-right: 50px;
+    background-color: colors.$field-backgraund;
 
     &,
     &:focus {
@@ -28,40 +29,43 @@
 
   &:hover,
   &:hover input {
-    //background-color: $primary-10;
+    background-color: colors.$field-backgraund;
   }
 }
 
 .input_container_error {
-  //border-color: $error;
+  border-color: colors.$error;
 }
 
 .label,
 .label_top {
-  //@include fontMedium;
   position: absolute;
-  top: 23px;
+  top: 8px;
   left: 0px;
   padding-left: 16px;
   padding-right: 16px;
-  color: $text-color-50;
+  font-size: 17px;
+  line-height: 22px;
+  color: colors.$field-text;
   transition-duration: 100ms;
   pointer-events: none;
   cursor: default;
 }
 
 .label_top {
-  //@include fontSmall;
-  top: 8px;
+  font-size: 14px;
+  line-height: 16px;
+  top: -8px;
+  left: 10px;
 }
 
 .asterisk {
-  //color: $error;
+  color: colors.$error;
 }
 
 .error_focused,
 .error {
-  color: $error;
+  color: colors.$error;
   font-size: 14px;
   line-height: 16px;
   padding-bottom: 4px;

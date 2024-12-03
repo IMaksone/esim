@@ -12,6 +12,7 @@ export default function ElementWrapper({
   children,
 }: ElementWrapperProps) {
   const styles = {
+    position: "absolute" as any,
     height: VIRTUAL_LIST_PARAMS.elHeight,
     top: index * VIRTUAL_LIST_PARAMS.elFullHeight,
   };

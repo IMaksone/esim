@@ -24,6 +24,7 @@ export default function ListWrapper<ElementData>({
   return (
     <div
       style={{
+        position: "relative",
         height: VIRTUAL_LIST_PARAMS.elFullHeight * count,
       }}
     >

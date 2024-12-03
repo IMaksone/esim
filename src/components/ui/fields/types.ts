@@ -1,7 +1,7 @@
 import { ValueHandler } from "src/types/fields";
 
 export type CommonFieldsProps = {
-  id: string;
+  id?: string;
   name?: string;
   className?: string;
   label?: string;

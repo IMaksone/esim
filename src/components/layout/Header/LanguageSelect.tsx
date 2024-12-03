@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 
 import Dropdown from "src/components/ui/Dropdown";
-import Papper from "src/components/ui/Papper";
 
 import classes from "./language-select.module.scss";
 

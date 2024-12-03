@@ -11,6 +11,7 @@
   "loginToContinue": "Login to continue",
   "enterYourEmail": "Enter your email",
   "continue": "Continue",
+  "notFound": "Nothing found :(",
   "successfullyLoggedEmail": "You have successfully logged in via email",
   "fieldErrors": {
     "incorrectEmail": "Incorrect email"

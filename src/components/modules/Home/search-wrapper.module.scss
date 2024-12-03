@@ -1,0 +1,32 @@
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
+@use "src/styles/mixins/_shadow";
+
+.dropdown {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  z-index: numbers.$z-index-drop;
+  width: 100%;
+  background-color: colors.$white;
+  border-radius: numbers.$radius-papper;
+  @include shadow.defaultShadow;
+}
+
+.virtual_list {
+  max-width: 720px;
+  width: 100%;
+  max-height: 300px;
+  height: fit-content;
+}
+
+.not_found {
+  padding: 56px 0px;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+}

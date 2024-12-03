@@ -3,7 +3,7 @@ import { ChangeEventHandler, FocusEventHandler, LegacyRef } from 'react'
 import FieldLayout from './FieldLayout'
 
 type FieldProps = {
-  id: string
+  id?: string
   name?: string
   className?: string
   label?: string

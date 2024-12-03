@@ -1,0 +1,15 @@
+.search_field > div {
+  padding-left: 44px !important;
+
+  & label {
+    left: 27px;
+  }
+
+  &::before {
+    content: url("/svg/search.svg");
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 16px;
+  }
+}

@@ -54,6 +54,7 @@
 
   a {
     padding: 7px 14px;
+    border-radius: numbers.$radius-drop;
 
     &:hover {
       background-color: colors.$hover-gray;

@@ -3,7 +3,7 @@ import useFieldController from "./useFieldController";
 import EmailField from "src/components/ui/fields/EmailField";
 
 type EmailFieldControllerProps = {
-  id: string;
+  id?: string;
   name: FIELD_NAMES;
   label: string;
   required?: boolean;

@@ -1,9 +1,5 @@
 import { FIELD_NAMES } from "src/enums/fields";
-
-// TODO типизировать
-export type Country = {
-  [key in string]?: any;
-};
+import { Country } from "src/types/country";
 
 export type CountriesState = {
   countryList: Country[];

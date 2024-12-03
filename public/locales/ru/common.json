@@ -11,6 +11,7 @@
   "loginToContinue": "Войдите, чтобы продолжить",
   "enterYourEmail": "Введи email",
   "continue": "Продолжить",
+  "notFound": "Ничего не найдено :(",
   "successfullyLoggedEmail": "Вы успешно вошли через почту",
   "fieldErrors": {
     "incorrectEmail": "Некорректный email"
