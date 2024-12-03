@@ -1,40 +1,31 @@
-import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
+import clickInsideHandler from "src/helper/clickInsideHandler";
 
 type DropdownProps = {
+  className?: string;
   open: boolean;
-  title: ReactNode;
-  content: ReactNode;
+  title: FC<any>;
+  content: FC<any>;
   setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export default function Dropdown({
+  className,
   open,
-  title,
-  content,
+  title: Title,
+  content: Content,
   setOpen,
 }: DropdownProps) {
-  const rootRef = useRef(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!open || !rootRef?.current) return;
-
-    const handler = (event: MouseEvent) => {
-      if (!rootRef?.current?.contains(event.target)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handler);
-
-    return () => {
-      document.removeEventListener("click", handler);
-    };
-  }, [open]);
+    return clickInsideHandler(rootRef, open, setOpen);
+  }, [open, setOpen]);
 
   return (
-    <div ref={rootRef}>
-      {title}
-      {open && <div>{content}</div>}
+    <div ref={rootRef} className={className}>
+      <Title />
+      {open && <Content />}
     </div>
   );
 }

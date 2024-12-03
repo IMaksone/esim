@@ -1,0 +1,6 @@
+@use "src/styles/variables/_colors";
+
+.layout {
+  min-height: 100vh;
+  background-color: colors.$default-layout-backgraund;
+}

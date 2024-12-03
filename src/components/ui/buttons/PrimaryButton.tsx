@@ -5,11 +5,11 @@ import classNames from "src/helper/classNames";
 import classes from "./primary-button.module.scss";
 
 export default function PrimaryButton({
-  className,
+  className = "",
   children,
   onClick,
 }: ButtonProps) {
-  const insideClassName = classNames(classes.button, className)
+  const insideClassName = classNames(classes.button, className);
 
   return (
     <Button className={insideClassName} onClick={onClick}>

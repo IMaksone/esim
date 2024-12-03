@@ -1,3 +1,15 @@
 {
-  "title": "Test title"
+  "title": "eSIM card with internet for travel and business",
+  "login": "Login",
+  "logout": "Logout",
+  "popularCountries": "Popular countries",
+  "showAllCountries": "Show all countries",
+  "showPopularCountries": "Show popular countries",
+  "findDirection": "Find direction",
+  "howDoesThisWork": "How does this work",
+  "veryLongTitle": "Very long title",
+  "loginToContinue": "Login to continue",
+  "enterYourEmail": "Enter your email",
+  "continue": "Continue",
+  "successfullyLoggedEmail": "You have successfully logged in via email"
 }

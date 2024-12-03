@@ -8,8 +8,11 @@ export const getApiCountries: ApiRequest = async (lang: string) => {
     const endpoint = COUNTRIES_FOR_SALE + "?lang=" + lang;
 
     const response = await fetcher(endpoint);
-
-    return { data: response };
+    if (response[0]) {
+      return { data: response[0] };
+    } else {
+      throw new Error("ERROR getApiCountries: no data");
+    }
   } catch (error: any) {
     return { error: error?.message };
   }

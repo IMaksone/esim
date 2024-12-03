@@ -9,11 +9,11 @@ export default Home;
 export async function getStaticProps(context: NextPageContext) {
   const { locale } = context;
 
-  const countries = await getApiCountries(locale);
+  const countriesResponse = await getApiCountries(locale);
 
   const initialState = {
     countries: {
-      countryList: countries,
+      countryList: countriesResponse.data,
     },
   };
 

@@ -4,12 +4,12 @@ import classNames from "src/helper/classNames";
 
 import classes from "./icon-button.module.scss";
 
-export default function PrimaryButton({
-  className,
+export default function IconButton({
+  className = "",
   children,
   onClick,
 }: ButtonProps) {
-  const insideClassName = classNames(classes.button, className)
+  const insideClassName = classNames(classes.button, className);
 
   return (
     <Button className={insideClassName} onClick={onClick}>

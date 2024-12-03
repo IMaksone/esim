@@ -1,3 +1,15 @@
 {
-  "title": "Test title"
+  "title": "eSIM карты с интернетом для путешествий и бизнеса",
+  "login": "Войти",
+  "logout": "Выйти",
+  "popularCountries": "Популярные страны",
+  "showAllCountries": "Показать все страны",
+  "showPopularCountries": "Показать популярные страны",
+  "findDirection": "Найти направление",
+  "howDoesThisWork": "Как это работает",
+  "veryLongTitle": "Очень длинный заголовок",
+  "loginToContinue": "Войдите, чтобы продолжить",
+  "enterYourEmail": "Введи email",
+  "continue": "Продолжить",
+  "successfullyLoggedEmail": "Вы успешно вошли через почту"
 }

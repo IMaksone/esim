@@ -1,0 +1,15 @@
+@use "src/styles/variables/_colors";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 16px;
+  background-color: colors.$white;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}

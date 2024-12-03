@@ -1,0 +1,9 @@
+@use "src/styles/variables/_numbers";
+
+.logo {
+  width: 103px;
+  height: 30px;
+}
+
+@media only screen and (min-width: numbers.$mobile) {
+}

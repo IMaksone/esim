@@ -1,0 +1,8 @@
+@use "src/styles/variables/_numbers";
+@use "src/styles/variables/_colors";
+
+.papper {
+  padding: 16px;
+  background-color: colors.$white;
+  border-radius: numbers.$radius-button;
+}
