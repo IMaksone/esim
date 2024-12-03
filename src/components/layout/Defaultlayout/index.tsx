@@ -12,7 +12,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <section className={classes.layout}>
       <Header />
-      <section>{children}</section>
+      <section className={classes.content}>{children}</section>
     </section>
   );
 }

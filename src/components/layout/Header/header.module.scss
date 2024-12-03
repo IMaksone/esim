@@ -1,11 +1,19 @@
 @use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
 
 .header {
+  width: 100%;
+  background-color: colors.$white;
+}
+
+.header_content{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: numbers.$header-max;
   padding: 6px 16px;
-  background-color: colors.$white;
+  margin: auto;
 }
 
 .buttons {

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { setFieldByKey, setFieldValueByKey, setFieldErrorByKey } from "./seters";
+import { setFieldByName, setFieldValueByName, setFieldErrorByName } from "./seters";
 import { FieldsState } from "src/store/types";
 import { SLICE_NAMES } from "../enums";
 import createInitSlice from "../createInitSlice";
@@ -11,9 +11,9 @@ const fieldsSlice = createSlice({
   name: SLICE_NAMES.FIELDS,
   initialState,
   reducers: {
-    setFieldByKey,
-    setFieldValueByKey,
-    setFieldErrorByKey,
+    setFieldByName,
+    setFieldValueByName,
+    setFieldErrorByName,
     initFields: createInitSlice(initialState)
   },
 });

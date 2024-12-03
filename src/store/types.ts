@@ -1,8 +1,9 @@
-// TODO типизировать
+import { FIELD_NAMES } from "src/enums/fields";
 
+// TODO типизировать
 export type Country = {
-  [key in string]?: any
-}
+  [key in string]?: any;
+};
 
 export type CountriesState = {
   countryList: Country[];
@@ -12,15 +13,13 @@ export type ModalsState = {
   authModal: { visible: boolean };
 };
 
-export type FieldKeys = "email" | "search";
-
 export type FieldData = {
   value: string;
   error: string;
 };
 
 export type FieldsState = {
-  [key in FieldKeys]?: FieldData;
+  [key in FIELD_NAMES]?: FieldData;
 };
 
 export type AuthState = {

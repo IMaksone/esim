@@ -1,17 +1,17 @@
-import { FieldKeys } from "../types";
+import { FIELD_NAMES } from "src/enums/fields";
 import useStoreSelector from "./common/useStoreSelector";
 
-const useFieldByKeySelector = (key: FieldKeys) =>
-  useStoreSelector((state) => state.fields[key]);
+const useFieldByNameSelector = (name: FIELD_NAMES) =>
+  useStoreSelector((state) => state.fields[name]);
 
-const useFieldValueByKeySelector = (key: FieldKeys) =>
-  useStoreSelector((state) => state.fields[key]?.value);
+const useFieldValueByNameSelector = (name: FIELD_NAMES) =>
+  useStoreSelector((state) => state.fields[name]?.value);
 
-const useFieldErrorByKeySelector = (key: FieldKeys) =>
-  useStoreSelector((state) => state.fields[key]?.error);
+const useFieldErrorByNameSelector = (name: FIELD_NAMES) =>
+  useStoreSelector((state) => state.fields[name]?.error);
 
 export {
-  useFieldByKeySelector,
-  useFieldValueByKeySelector,
-  useFieldErrorByKeySelector,
+  useFieldByNameSelector,
+  useFieldValueByNameSelector,
+  useFieldErrorByNameSelector,
 };

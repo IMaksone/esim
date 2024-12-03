@@ -1,19 +1,19 @@
 import fieldsSlice from "../slices/fieldsSlice";
 import createUseStoreDispatch from "./common/createUseStoreDispatch";
 
-const { setFieldByKey, setFieldValueByKey, setFieldErrorByKey } =
+const { setFieldByName, setFieldValueByName, setFieldErrorByName } =
   fieldsSlice.actions;
 
-const useDispatchSetFieldByKey = createUseStoreDispatch(setFieldByKey);
+const useDispatchFieldByName = createUseStoreDispatch(setFieldByName);
 
-const useDispatchSetFieldValueByKey =
-  createUseStoreDispatch(setFieldValueByKey);
+const useDispatchFieldValueByName =
+  createUseStoreDispatch(setFieldValueByName);
 
-const useDispatchSetFieldErrorByKey =
-  createUseStoreDispatch(setFieldErrorByKey);
+const useDispatchFieldErrorByName =
+  createUseStoreDispatch(setFieldErrorByName);
 
 export {
-  useDispatchSetFieldByKey,
-  useDispatchSetFieldValueByKey,
-  useDispatchSetFieldErrorByKey,
+  useDispatchFieldByName,
+  useDispatchFieldValueByName,
+  useDispatchFieldErrorByName,
 };

@@ -1,6 +1,16 @@
 @use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
 
 .layout {
   min-height: 100vh;
   background-color: colors.$default-layout-backgraund;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: numbers.$content-max;
+  padding: 20px 8px;
+  margin: auto;
 }

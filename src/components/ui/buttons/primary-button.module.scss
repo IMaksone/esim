@@ -16,3 +16,9 @@
     background-color: colors.$primary-button-hover;
   }
 }
+
+@media only screen and (min-width: numbers.$mobile) {
+  .button {
+    padding: 15px 32px;
+  }
+}

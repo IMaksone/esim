@@ -1,36 +1,37 @@
-import { FieldData, FieldKeys, FieldsState } from "src/store/types";
+import { FieldData, FieldsState } from "src/store/types";
 import { SliceSeter } from "../types";
+import { FIELD_NAMES } from "src/enums/fields";
 
 type SetFieldByKeyPayload = {
-  key: FieldKeys;
+  name: FIELD_NAMES;
   data: FieldData;
 };
 
-type SetFieldByKey = SliceSeter<FieldsState, SetFieldByKeyPayload>;
+type SetFieldByName = SliceSeter<FieldsState, SetFieldByKeyPayload>;
 
-const setFieldByKey: SetFieldByKey = (state, { payload }) => {
-  const { key, data } = payload;
+const setFieldByName: SetFieldByName = (state, { payload }) => {
+  const { name, data } = payload;
 
-  state[key] = data;
+  state[name] = data;
 
   return state;
 };
 
-type SetFieldValueByKey = SliceSeter<
+type SetFieldValueByName = SliceSeter<
   FieldsState,
   {
-    key: FieldKeys;
+    name: FIELD_NAMES;
     value: string;
   }
 >;
 
-const setFieldValueByKey: SetFieldValueByKey = (state, { payload }) => {
-  const { key, value } = payload;
+const setFieldValueByName: SetFieldValueByName = (state, { payload }) => {
+  const { name, value } = payload;
 
-  if (state[key]) {
-    state[key].value = value;
+  if (state[name]) {
+    state[name].value = value;
   } else {
-    state[key] = {
+    state[name] = {
       value,
       error: "",
     };
@@ -39,21 +40,21 @@ const setFieldValueByKey: SetFieldValueByKey = (state, { payload }) => {
   return state;
 };
 
-type SetFieldErrorByKey = SliceSeter<
+type SetFieldErrorByName = SliceSeter<
   FieldsState,
   {
-    key: FieldKeys;
+    name: FIELD_NAMES;
     error: string;
   }
 >;
 
-const setFieldErrorByKey: SetFieldErrorByKey = (state, { payload }) => {
-  const { key, error } = payload;
+const setFieldErrorByName: SetFieldErrorByName = (state, { payload }) => {
+  const { name, error } = payload;
 
-  if (state[key]) {
-    state[key].error = error;
+  if (state[name]) {
+    state[name].error = error;
   } else {
-    state[key] = {
+    state[name] = {
       error,
       value: "",
     };
@@ -62,4 +63,4 @@ const setFieldErrorByKey: SetFieldErrorByKey = (state, { payload }) => {
   return state;
 };
 
-export { setFieldByKey, setFieldValueByKey, setFieldErrorByKey };
+export { setFieldByName, setFieldValueByName, setFieldErrorByName };

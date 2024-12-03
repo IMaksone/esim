@@ -1,9 +1,10 @@
-import { useTranslation } from "next-i18next";
-
 import DefaultLayout from "src/components/layout/Defaultlayout";
+import Title from "./Title";
 
 export default function Home() {
-  const { t } = useTranslation("common");
-
-  return <DefaultLayout>{t("title")}</DefaultLayout>;
+  return (
+    <DefaultLayout>
+      <Title />
+    </DefaultLayout>
+  );
 }
