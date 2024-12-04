@@ -13,7 +13,7 @@ type CountryProps = {
 export default function CountryElement({ data }: CountryProps) {
   const commonTranslation = useCommonTranslation();
 
-  const renderedFlag = (
+  const renderedFlag = data && (
     <Image
       src={`/flags/${data.iso}.svg`}
       className={classes.flag}
@@ -26,17 +26,19 @@ export default function CountryElement({ data }: CountryProps) {
   const smallText = commonTranslation("from") + " €5/GB";
 
   return (
-    <Link href={data.url} className={classes.wrapper}>
-      <div className={classes.content}>
-        {renderedFlag}
-        <div className={classes.text}>
-          <div>
-            <p>{data.country}</p>
-            <small>{smallText}</small>
+    data && (
+      <Link href={data.url} className={classes.wrapper}>
+        <div className={classes.content}>
+          {renderedFlag}
+          <div className={classes.text}>
+            <div>
+              <p>{data.country}</p>
+              <small>{smallText}</small>
+            </div>
           </div>
         </div>
-      </div>
-      <Image src="/svg/arrow.svg" alt="arrow" width={5} height={10} />
-    </Link>
+        <Image src="/svg/arrow.svg" alt="arrow" width={5} height={10} />
+      </Link>
+    )
   );
 }

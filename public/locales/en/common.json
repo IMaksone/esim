@@ -3,6 +3,7 @@
   "login": "Login",
   "logout": "Logout",
   "popularCountries": "Popular countries",
+  "allCountries": "All countries",
   "showAllCountries": "Show all countries",
   "showPopularCountries": "Show popular countries",
   "findDirection": "Find direction",

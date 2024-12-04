@@ -1,0 +1,25 @@
+.title {
+  margin-bottom: 12px;
+}
+
+.content {
+  width: 100%!important;
+  height: 696px !important;
+  max-height: 80vh !important;
+  overflow-y: auto;
+  margin-bottom: 8px;
+}
+
+.two_element {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+
+  & a {
+    max-width: 50%;
+  }
+}
+
+.button {
+  width: 100%;
+}

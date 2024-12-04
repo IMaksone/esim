@@ -1,7 +1,7 @@
 import { VIRTUAL_LIST_PARAMS } from "src/constants/virtual";
 import { VirtualList } from "src/types/virtual";
 
-const numberOfAdditionalVisibleElements = 3;
+const numberOfAdditionalVisibleElements = 7;
 
 export default function getVisibleVirtualList<ElementData>(
   list: VirtualList<ElementData>,
