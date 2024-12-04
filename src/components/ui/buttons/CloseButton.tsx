@@ -13,7 +13,7 @@ export default function CloseButton({
 
   return (
     <Button className={insideClassName} onClick={onClick}>
-      <Image src="svg/close.svg" alt="close" width={16} height={16} />
+      <Image src="/svg/close.svg" alt="close" width={16} height={16} />
     </Button>
   );
 }

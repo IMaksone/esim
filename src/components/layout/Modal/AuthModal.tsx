@@ -34,11 +34,13 @@ const Button = () => {
 
   const email = useFieldByNameSelector(FIELD_NAMES.EMAIL);
 
+  const hide = useDispatchHideAuthModal();
+
   const handleClick = () => {
     if (!email?.value || email?.error) return;
 
     setSessionToken(email.value);
-
+    hide();
     router.push("/success-login");
   };
 
