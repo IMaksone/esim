@@ -5,10 +5,56 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 17px;
   width: 100%;
-  padding: 14px 16px;
+  height: 100%;
+  padding: 10px 16px;
 
   &:hover p {
+    color: colors.$default-text;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.flag {
+  border-radius: 100%;
+}
+
+.text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  & div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  & p {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
     color: colors.$black;
+  }
+
+  & small {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 10px;
+    line-height: 14px;
+    color: colors.$secondary-text;
   }
 }
