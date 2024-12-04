@@ -8,16 +8,16 @@ import { getApiCountries } from "src/services/api/countries";
 
 export default CountryPage;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  let paths = await getCountryPaths();
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   let paths = await getCountryPaths();
 
-  // We'll prerender only these paths at build time.
-  // { fallback: 'blocking' } will server-render pages
-  // on-demand if the path doesn't exist.
-  return { paths, fallback: "blocking" };
-};
+//   // We'll prerender only these paths at build time.
+//   // { fallback: 'blocking' } will server-render pages
+//   // on-demand if the path doesn't exist.
+//   return { paths, fallback: true };
+// };
 
-export const getStaticProps = async ({
+export const getServerSideProps = async ({
   params,
   locale,
 }: GetServerSidePropsContext) => {

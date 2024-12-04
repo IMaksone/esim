@@ -7,5 +7,5 @@ type TitleProps = {
 };
 
 export default function Title({ country }: TitleProps) {
-  return <h1 className={classes.title}>{country.country}</h1>;
+  return <h1 className={classes.title}>{country?.country}</h1>;
 }

@@ -1,5 +1,6 @@
-import { Country, CountriesState } from "src/store/types";
+import { CountriesState } from "src/store/types";
 import { SliceSeter } from "../types";
+import { Country } from "src/types/country";
 
 type SetFieldByKey = SliceSeter<CountriesState, Country[]>;
 
