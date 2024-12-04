@@ -1,3 +1,3 @@
-export type ApiRequest = (
+export type ApiRequest<Data = Object> = (
   ...args: any[]
-) => Promise<{ data?: Object | Array<any>; error?: string }>;
+) => Promise<{ data?: Data; error?: string }>;

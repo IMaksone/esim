@@ -1,9 +1,10 @@
+import { Country } from "src/types/country";
 import fetcher from "./tools/fetcher";
 import { ApiRequest } from "./types";
 
 const COUNTRIES_FOR_SALE = "countries_for_sale";
 
-export const getApiCountries: ApiRequest = async (lang: string) => {
+export const getApiCountries: ApiRequest<Country[]> = async (lang: string) => {
   try {
     const endpoint = COUNTRIES_FOR_SALE + "?lang=" + lang;
 
