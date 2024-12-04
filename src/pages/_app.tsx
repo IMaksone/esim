@@ -4,6 +4,8 @@ import { appWithTranslation } from "next-i18next";
 import { fontInter } from "src/initial/fonts";
 import { emptyInitialI18NextConfig } from "src/initial/i18next";
 import StoreProvider from "src/store";
+import Modal from "src/components/layout/Modal";
+import AuthorizeTrigger from "src/components/layout/AuthorizeTrigger";
 
 import "src/styles/globals.scss";
 
@@ -14,6 +16,8 @@ function App({ Component, pageProps }: AppProps) {
     <main className={fontInter.className}>
       <StoreProvider initialState={initialState}>
         <Component {...pageProps} />
+        <Modal />
+        <AuthorizeTrigger />
       </StoreProvider>
     </main>
   );

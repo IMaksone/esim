@@ -3,8 +3,8 @@ import createUseStoreDispatch from "./common/createUseStoreDispatch";
 
 const { authorize, unauthorize } = authSlice.actions;
 
-const useDispatchAuthorize = createUseStoreDispatch(authorize);
+const useDispatchAuthorize = createUseStoreDispatch<void>(authorize);
 
-const useDispatchUnauthorize = createUseStoreDispatch(unauthorize);
+const useDispatchUnauthorize = createUseStoreDispatch<void>(unauthorize);
 
 export { useDispatchAuthorize, useDispatchUnauthorize };

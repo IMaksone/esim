@@ -1,0 +1,18 @@
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  background-color: colors.$field-backgraund;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$second-backgraund;
+  }
+}

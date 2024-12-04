@@ -1,0 +1,31 @@
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
+
+.wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: numbers.$z-index-modal-wrapper;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$modal-wrapper-background;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  position: relative;
+  max-width: 450px;
+  padding: 24px;
+  background-color: colors.$white;
+  border-radius: numbers.$radius-papper;
+}
+
+.close_button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: numbers.$z-index-modal;
+}

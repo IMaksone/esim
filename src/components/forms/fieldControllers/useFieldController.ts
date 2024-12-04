@@ -1,8 +1,13 @@
-
 import { FIELD_NAMES } from "src/enums/fields";
 import useGetFieldErrorByKey from "src/hooks/useFieldErrorByKey";
-import { useDispatchFieldErrorByName, useDispatchFieldValueByName } from "src/store/dispatch/dispatchFileds";
-import { useFieldErrorByNameSelector, useFieldValueByNameSelector } from "src/store/selector/fieldsSelector";
+import {
+  useDispatchFieldErrorByName,
+  useDispatchFieldValueByName,
+} from "src/store/dispatch/dispatchFileds";
+import {
+  useFieldErrorByNameSelector,
+  useFieldValueByNameSelector,
+} from "src/store/selector/fieldsSelector";
 import { ValueHandler } from "src/types/fields";
 
 export default function useFieldController(name: FIELD_NAMES) {
@@ -18,10 +23,12 @@ export default function useFieldController(name: FIELD_NAMES) {
     dispatchFieldValue({ name, value: newValue });
 
     if (errorKey) {
-      const newErrorMessage = getFieldErrorByKey(errorKey);
+      const newErrorMessage = getFieldErrorByKey(errorKey) as string;
 
       if (newErrorMessage !== errorMessage)
         dispatchFieldError({ name, error: newErrorMessage });
+    } else {
+      dispatchFieldError({ name, error: "" });
     }
   };
 
