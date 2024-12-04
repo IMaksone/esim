@@ -29,7 +29,7 @@ export default function Title() {
 
   return (
     <Papper>
-      <h5 className={classes.title}>{title}</h5>
+      <h4 className={classes.title}>{title}</h4>
       {renderedContent}
       <PrimaryButton className={classes.button} onClick={handleClick}>
         {buttonText}

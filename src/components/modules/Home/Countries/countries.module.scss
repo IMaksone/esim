@@ -1,9 +1,12 @@
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
+
 .title {
   margin-bottom: 12px;
 }
 
 .content {
-  width: 100%!important;
+  width: 100% !important;
   height: 696px !important;
   max-height: 80vh !important;
   overflow-y: auto;

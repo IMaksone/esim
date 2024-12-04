@@ -1,0 +1,40 @@
+@use "src/styles/variables/_colors";
+@use "src/styles/variables/_numbers";
+
+.wrapper {
+  margin: 8px 0px;
+  padding: 24px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.content {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 250px;
+  height: 338px;
+  padding: 24px 44px 0px;
+  border-radius: numbers.$radius-papper;
+  background-color: colors.$default-layout-backgraund;
+
+  & p {
+    text-align: center;
+    font-weight: 600px;
+    color: colors.$black;
+  }
+
+  & div {
+    height: 100%;
+    border-radius: numbers.$radius-papper numbers.$radius-papper 0px 0px;
+    background-color: colors.$second-backgraund;
+  }
+}

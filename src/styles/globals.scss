@@ -28,7 +28,7 @@ h1 {
   font-weight: 700;
 }
 
-h5 {
+h4 {
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
@@ -48,6 +48,7 @@ small {
 
 ::-webkit-scrollbar {
   width: 7px;
+  height: 7px;
   border-radius: 3px;
 }
 
@@ -56,7 +57,7 @@ small {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9a9a9a;
+  background: colors.$second-backgraund;
   border-radius: 5px;
 }
 
