@@ -1,8 +1,8 @@
 type FetcherParams = {
   endpoint: string;
   method?: "GET";
-  body?: Object;
-  headers?: Object;
+  body?: object;
+  headers?: object;
 };
 
 export default async function fetcher(

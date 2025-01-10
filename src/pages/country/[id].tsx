@@ -1,9 +1,8 @@
-import { GetServerSidePropsContext, GetStaticPaths } from "next";
+import { GetServerSidePropsContext } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import CountryPage from "src/components/modules/CountryPage";
 import getCountryName from "src/helper/getCountryName";
-import getCountryPaths from "src/helper/getCountryPaths";
 import { getApiCountries } from "src/services/api/countries";
 
 export default CountryPage;
@@ -42,7 +41,7 @@ export const getServerSideProps = async ({
     return {
       props: { ...translation, country },
     };
-  } catch (error) {
+  } catch {
     return {
       redirect: {
         destination: "/",

@@ -17,7 +17,7 @@ export const useScreenWidthGreaterThan = (width: number) => {
     screenResolutionAction();
 
     return () => removeEventListener("resize", screenResolutionAction);
-  }, [greater, setGreater]);
+  }, [greater, width, setGreater]);
 
   return greater;
 };

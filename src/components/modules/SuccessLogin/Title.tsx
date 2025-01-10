@@ -22,7 +22,7 @@ export default function Title() {
     if (!token) router.push("/");
 
     if (token && email !== token) setEmail(token);
-  }, [authorized]);
+  }, [authorized, email, router]);
 
   return (
     <h1 className={classes.title}>

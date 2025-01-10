@@ -5,7 +5,7 @@ const useFieldByNameSelector = (name: FIELD_NAMES) =>
   useStoreSelector((state) => state.fields[name]);
 
 const useFieldValueByNameSelector = (name: FIELD_NAMES) =>
-  useStoreSelector((state) => state.fields[name]?.value);
+  useStoreSelector((state) => state.fields[name]?.value || "");
 
 const useFieldErrorByNameSelector = (name: FIELD_NAMES) =>
   useStoreSelector((state) => state.fields[name]?.error);

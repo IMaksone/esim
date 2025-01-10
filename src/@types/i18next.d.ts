@@ -10,9 +10,9 @@ import "i18next";
 // resources.ts file is generated with `npm run toc`
 import common from "../../public/locales/en/common.json";
 
-const resources = {
-  common,
-} as const;
+type resources = {
+  common: typeof common;
+};
 
 declare module "i18next" {
   interface CustomTypeOptions {

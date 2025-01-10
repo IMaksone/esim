@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import Dropdown from "src/components/ui/Dropdown";
 import SearchFieldController from "src/components/forms/fieldControllers/SearchFieldController";
@@ -10,6 +10,7 @@ import { useFieldValueByNameSelector } from "src/store/selector/fieldsSelector";
 import CountryElement from "src/components/ui/CountryElement";
 
 import classes from "./search-wrapper.module.scss";
+import { Country } from "src/types/country";
 
 export default function SearchWrapper() {
   const [open, setOpen] = useState(false);
@@ -55,13 +56,18 @@ const useList = () => {
   const countryList = useCountryListSelector();
   const searchValue = useFieldValueByNameSelector(FIELD_NAMES.SEARCH);
 
-  const list = searchValue
-    ? countryList.filter(
-        (country) =>
-          country.country.indexOf(searchValue) >= 0 ||
-          country.iso.indexOf(searchValue) >= 0
-      )
-    : [];
+  const countryListFilter = useCallback(() => {
+    const filterCallback = (country: Country) =>
+      country.country.indexOf(searchValue) >= 0 ||
+      country.iso.indexOf(searchValue) >= 0;
 
-  return useMemo(() => list, [searchValue, countryList]);
+    return countryList.filter(filterCallback);
+  }, [searchValue, countryList]);
+
+  const list = useMemo(
+    () => (searchValue ? countryListFilter() : []),
+    [searchValue, countryListFilter]
+  );
+
+  return list;
 };
