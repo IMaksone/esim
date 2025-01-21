@@ -1,5 +1,3 @@
-[DEMO](esim-three.vercel.app/)
-
 This was a test task.
 The conditions required:
 - adaptively lay out several pages according to the layout
